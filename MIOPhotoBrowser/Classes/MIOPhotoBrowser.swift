@@ -11,12 +11,12 @@ import UIKit
 public let MIOPHOTO_LOADING_DID_END_NOTIFICATION = "photoLoadingDidEndNotification"
 
 public class MIOPhotoBrowser: UIPageViewController {
-    var photos: [MIOPhoto] = []
+    var photos: [MIOPhotoProtocol] = []
     var photosViewControllers: [UIViewController] = []
     var currentIndex: Int = 0
 
     // MARK: - Object Lifecycle
-    public convenience init(photos: [MIOPhoto]) {
+    public convenience init(photos: [MIOPhotoProtocol]) {
         self.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         self.photos = photos
         for photo in photos {
