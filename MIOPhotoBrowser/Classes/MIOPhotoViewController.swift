@@ -41,6 +41,8 @@ class MIOPhotoViewController: UIViewController {
         
         if (photo.underlyingImage == nil) {
             zoomingScrollView.loadImage()
+        } else {
+            zoomingScrollView.updateZoom()
         }
     }
     
