@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/MIOPhotoBrowser.svg?style=flat)](http://cocoapods.org/pods/MIOPhotoBrowser)
 [![Platform](https://img.shields.io/cocoapods/p/MIOPhotoBrowser.svg?style=flat)](http://cocoapods.org/pods/MIOPhotoBrowser)
 
+MIOPhotoBrowser is a simple photo browser inspired by the native iOS photos app. It is fast, easy to read and optimized to handle as many pictures as you need. - Work in progress ßßß-
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -22,7 +24,7 @@ pod "MIOPhotoBrowser"
 
 ## Author
 
-Maxence Henneron, mhenneron@seamgen.com
+Maxence Henneron, maxence.henneron@icloud.com
 
 ## License
 

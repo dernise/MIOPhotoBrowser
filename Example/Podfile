@@ -2,7 +2,8 @@ use_frameworks!
 
 target 'MIOPhotoBrowser_Example' do
   pod 'MIOPhotoBrowser', :path => '../'
-
+  pod 'SDWebImage', '~>3.8'
+  
   target 'MIOPhotoBrowser_Tests' do
     inherit! :search_paths
 
