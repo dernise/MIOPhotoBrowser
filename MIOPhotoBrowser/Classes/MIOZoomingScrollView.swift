@@ -22,9 +22,6 @@ public class MIOZoomingScrollView: UIScrollView {
     var photo: MIOPhotoProtocol {
         didSet {
             photoImageView.image = nil
-            if photo != nil {
-                displayImage()
-            }
         }
     }
     
@@ -65,6 +62,10 @@ public class MIOZoomingScrollView: UIScrollView {
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
         decelerationRate = UIScrollViewDecelerationRateFast
+    }
+    
+    public func loadImage(){
+        photo.loadUnderlyingImageAndNotify()
     }
     
     public func updateMediaViewConstraints() {
@@ -115,8 +116,6 @@ public class MIOZoomingScrollView: UIScrollView {
             self.photoImageView.image = image
             layoutIfNeeded()
             updateZoom()
-        } else {
-            photo.loadUnderlyingImageAndNotify()
         }
     }
 }

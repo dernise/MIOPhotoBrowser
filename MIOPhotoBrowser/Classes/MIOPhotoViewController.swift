@@ -34,7 +34,14 @@ class MIOPhotoViewController: UIViewController {
         zoomingScrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         zoomingScrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         zoomingScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        zoomingScrollView.photo = photo
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if (photo.underlyingImage == nil) {
+            zoomingScrollView.loadImage()
+        }
     }
     
     // MARK: - Orientation Change
