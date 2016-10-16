@@ -33,6 +33,7 @@ public class MIOPhotoBrowser: UIPageViewController {
         }
         
         dataSource = self
+        delegate = self
     }
 }
 extension MIOPhotoBrowser: UIPageViewControllerDataSource {
@@ -53,6 +54,13 @@ extension MIOPhotoBrowser: UIPageViewControllerDataSource {
             }
         }
         return nil
+    }
+
+}
+
+extension MIOPhotoBrowser: UIPageViewControllerDelegate {
+    public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        print("test")
     }
     
     //Keeping track of the index

@@ -53,11 +53,12 @@ public class MIOZoomingScrollView: UIScrollView {
         rightMediaViewConstraint = photoImageView.rightAnchor.constraint(equalTo: self.rightAnchor)
         topMediaViewConstraint = photoImageView.topAnchor.constraint(equalTo: self.topAnchor)
         bottomMediaViewConstraint = photoImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        
         [leftMediaViewConstraint, rightMediaViewConstraint, topMediaViewConstraint, bottomMediaViewConstraint].forEach({
             constraint in
             constraint.isActive = true
         })
-
+        
         delegate = self
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
@@ -103,9 +104,6 @@ public class MIOZoomingScrollView: UIScrollView {
             
             minimumZoomScale = minZoom
             
-            // Force scrollViewDidZoom fire if zoom did not change
-            if minZoom == lastZoomScale { minZoom += 0.000001 }
-            
             zoomScale = minZoom
             lastZoomScale = minZoom
         }
@@ -114,7 +112,7 @@ public class MIOZoomingScrollView: UIScrollView {
     public func displayImage() {
         if let image = photo.underlyingImage {
             self.photoImageView.image = image
-            layoutIfNeeded()
+            updateMediaViewConstraints()
             updateZoom()
         }
     }
